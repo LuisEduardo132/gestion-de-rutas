@@ -1,3 +1,4 @@
+
 rutas_transcaribe = {
     "T100E": {
         "horarios": {
@@ -66,6 +67,7 @@ rutas_transcaribe = {
             "La Bodeguita", "Centro", "Chambacú", 
             "La Popa", "Bazurto",
          ]
+    },
     "T103": {
         "horarios": {
             "lunes_viernes": "5 AM - 9:00 PM",
@@ -117,3 +119,15 @@ rutas_transcaribe = {
         ]
     },
 }
+
+def obtener_info_ruta(ruta):
+    if ruta in rutas_transcaribe:
+        info = rutas_transcaribe[ruta]
+        return f"Ruta {ruta}\n" \
+               f"Horarios:\n" \
+               f"  - Lunes a Viernes: {info['horarios']['lunes_viernes']}\n" \
+               f"  - Sábados: {info['horarios'].get('sabados', 'No disponible')}\n" \
+               f"  - Domingos: {info['horarios'].get('domingos', 'No disponible')}\n" \
+               f"Barrios: {', '.join(info['barrios'])}\n"
+    else:
+        return f"La ruta {ruta} no existe."
