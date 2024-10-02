@@ -14,15 +14,20 @@ imagen = Image.open("ts.png")
 #Imagen RGBA para que sea transparente
 imagen = imagen.convert("RGBA")
 
+boton=Button(cabeza,text="BUSCAR", font=("Sans-Seriff",9), bg="#e25e0c", fg="white")
+boton.place(x=350, y=200, anchor=CENTER)
+
+Label(text="Busqueda:", font=("Sans-Seriff", 9, "bold"),fg="white", bg="#e25e0c").place(x=150, y=200, anchor=CENTER)
+
 texto=Entry(cabeza)
 texto.pack()
-texto.place(x=200, y=300, anchor=CENTER)
+texto.place(x=250, y=200, anchor=CENTER)
 
 #Redimensionar la imagen
 imagen_redimensionada = imagen.resize((180, 130))
 
-boton=Button(cabeza,text="REGISTRO DE RUTAS", font=("Sans-Seriff",14), bg="white", fg="white")
-boton.place(relx=0.5, y=220, anchor=CENTER)
+boton=Button(cabeza,text="REGISTRO DE RUTAS", font=("Sans-Seriff",14), bg="#e25e0c", fg="white")
+boton.place(x=250, y=250, anchor=CENTER)
 
 #Convertir la imagen redimensionada en un objeto que Tkinter pueda usar
 imagen_tk = ImageTk.PhotoImage(imagen_redimensionada)
